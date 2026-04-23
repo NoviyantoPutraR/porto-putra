@@ -25,63 +25,85 @@ function TechStackMarqueeComponent() {
   const listItems = [...TECH_ITEMS, ...TECH_ITEMS]
 
   return (
-    <section className="bg-white py-20 overflow-hidden border-t border-gray-100">
-      <div className="container mx-auto px-6 mb-12 text-center">
-        <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-black mb-2">
-          Tools I Use
-        </h2>
-        <div className="h-[1px] w-12 bg-gray-300 mx-auto mt-4"></div>
+    <section className="bg-white py-12 overflow-hidden">
+      <div className="container mx-auto px-6 mb-8 text-center">
+        <motion.h2 
+          className="text-xs font-bold uppercase tracking-[0.3em] text-black mb-2"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Tech Stack
+        </motion.h2>
+        <motion.div 
+          className="h-[1px] bg-gray-300 mx-auto mt-4"
+          initial={{ width: 0 }}
+          whileInView={{ width: 48 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        ></motion.div>
       </div>
 
-      <div 
-        className="relative flex overflow-hidden group"
-        style={{
-          maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)'
-        }}
-      >
-        {/* Kontainer Animasi */}
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: [0, '-50%'] }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: 'linear',
+      <div className="container mx-auto max-w-5xl">
+        <div 
+          className="relative overflow-hidden group py-12"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
           }}
         >
-          {listItems.map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="flex items-center justify-center mx-12 md:mx-20"
-            >
-              <div className="flex flex-col items-center gap-4 group/item">
-                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center filter grayscale opacity-40 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500">
-                  {/* Fallback jika logo tidak ditemukan, menampilkan teks */}
-                  <img 
-                    src={item.icon} 
-                    alt={item.name} 
-                    className={`max-w-full max-h-full object-contain ${item.name === 'Gemini AI' ? 'scale-[1.6]' : ''}`}
-                    onError={(e) => {
-                      // Fallback sederhana jika file SVG tidak tersedia
-                      e.currentTarget.style.display = 'none';
-                      const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        const span = document.createElement('span');
-                        span.innerText = item.name.substring(0, 1);
-                        span.className = 'text-2xl font-bold text-gray-300';
-                        parent.appendChild(span);
-                      }
-                    }}
-                  />
+          <motion.div
+            className="flex whitespace-nowrap"
+            animate={{ x: [0, '-50%'] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          >
+            {listItems.map((item, index) => (
+              <motion.div
+                key={`${item.name}-${index}`}
+                className="flex items-center justify-center mx-8 md:mx-12"
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: (index % TECH_ITEMS.length) * 0.1,
+                }}
+              >
+                <div className="flex flex-col items-center gap-4 group/item">
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center filter grayscale opacity-40 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500">
+                    {/* Fallback jika logo tidak ditemukan, menampilkan teks */}
+                    <img 
+                      src={item.icon} 
+                      alt={item.name} 
+                      className={`max-w-full max-h-full object-contain ${item.name === 'Gemini AI' ? 'scale-[1.6]' : ''}`}
+                      onError={(e) => {
+                        // Fallback sederhana jika file SVG tidak tersedia
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          const span = document.createElement('span');
+                          span.innerText = item.name.substring(0, 1);
+                          span.className = 'text-2xl font-bold text-gray-300';
+                          parent.appendChild(span);
+                        }
+                      }}
+                    />
+                  </div>
+                  <span className="text-[10px] uppercase tracking-widest text-gray-300 group-hover/item:text-black transition-colors duration-300 opacity-0 group-hover/item:opacity-100">
+                    {item.name}
+                  </span>
                 </div>
-                <span className="text-[10px] uppercase tracking-widest text-gray-300 group-hover/item:text-black transition-colors duration-300 opacity-0 group-hover/item:opacity-100">
-                  {item.name}
-                </span>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )

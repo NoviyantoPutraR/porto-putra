@@ -1,0 +1,48 @@
+<svg width="360" height="480" viewBox="0 0 360 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="360" height="480" fill="#f3f4f6"/>
+  <!-- Background -->
+  <rect width="360" height="480" fill="url(#bg_gradient)"/>
+  
+  <!-- Body / Shirt -->
+  <ellipse cx="180" cy="420" rx="140" ry="100" fill="#1e3a5f"/>
+  <rect x="40" y="340" width="280" height="140" fill="#1e3a5f" rx="8"/>
+  
+  <!-- Collar -->
+  <polygon points="180,300 155,360 180,345 205,360" fill="#2c4f7c"/>
+  
+  <!-- Neck -->
+  <rect x="162" y="270" width="36" height="50" rx="8" fill="#c8a882"/>
+  
+  <!-- Head -->
+  <ellipse cx="180" cy="220" rx="80" ry="90" fill="#c8a882"/>
+  
+  <!-- Hair -->
+  <ellipse cx="180" cy="148" rx="80" ry="45" fill="#1a1a1a"/>
+  <ellipse cx="115" cy="185" rx="22" ry="35" fill="#1a1a1a"/>
+  <ellipse cx="245" cy="185" rx="22" ry="35" fill="#1a1a1a"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="155" cy="215" rx="10" ry="8" fill="#2d1a0e"/>
+  <ellipse cx="205" cy="215" rx="10" ry="8" fill="#2d1a0e"/>
+  
+  <!-- Eyebrows -->
+  <path d="M142 200 Q155 194 168 200" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M192 200 Q205 194 218 200" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse cx="180" cy="235" rx="8" ry="5" fill="#b8926a"/>
+  
+  <!-- Smile -->
+  <path d="M163 255 Q180 268 197 255" stroke="#8b5e3c" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Subtle gradient overlay -->
+  <defs>
+    <linearGradient id="bg_gradient" x1="0" y1="0" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8ecf0"/>
+      <stop offset="100%" stop-color="#d1d9e0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Watermark text -->
+  <text x="180" y="460" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" fill="#9ca3af" font-weight="500">Replace with your photo</text>
+</svg>

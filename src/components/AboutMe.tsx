@@ -32,14 +32,13 @@ function AboutMeComponent() {
             className="relative z-10 mt-10 w-full rounded-[60px] bg-[#111] p-10 text-white md:mt-0 md:w-[70%] md:rounded-[100px] md:p-20 md:pr-40 lg:rounded-tr-none"
           >
             <h3 className="mb-6 text-xl font-medium tracking-wide">
-              Halo, saya seorang Pengembang
+              Hello, I'm Noviyanto Putra Ramadhan
             </h3>
             <p className="mb-6 font-sans font-light leading-relaxed text-gray-300 md:text-lg">
-              Perjalanan karir saya dimulai beberapa tahun lalu. Fokus utama
-              saya adalah rekayasa perangkat lunak, pengembangan antarmuka pengguna, eksplorasi sistem berkinerja tinggi, dan inovasi pengalaman digital yang interaktif.
+              I am a Full-stack Web Developer. I focus on clean architecture, performance optimization, and building efficient, scalable systems, including AI technology integration.
             </p>
             <p className="font-sans text-sm font-light leading-relaxed text-gray-400">
-              Saya telah berkontribusi dalam berbagai proyek yang membutuhkan optimasi skala besar, arsitektur kode yang bersih, serta kolaborasi antar tim multidisiplin.
+              Experienced in collaborative environments, I bring a strong problem-solving approach and the ability to translate business requirements into precise technical solutions.
             </p>
 
             {/* Elemen Dekorasi Garis Halus di kiri (opsional) */}

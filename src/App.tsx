@@ -2,6 +2,7 @@ import Navbar from '@/components/features/navbar/Navbar'
 import HeroSection from '@/components/features/hero/HeroSection'
 import { ProjectCarousel, type ProjectDetail } from '@/components/features/projects/ProjectCarousel'
 import { AboutMe } from '@/components/AboutMe'
+import { TechStackMarquee } from '@/components/features/tech-stack/TechStackMarquee'
 
 const DAFTAR_PROYEK: ProjectDetail[] = [
   {
@@ -76,6 +77,7 @@ function App() {
       <HeroSection />
       <AboutMe />
       <ProjectCarousel projectList={DAFTAR_PROYEK} />
+      <TechStackMarquee />
     </main>
   )
 }

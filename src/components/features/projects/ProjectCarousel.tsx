@@ -41,7 +41,7 @@ export const ProjectCarousel = ({ projectList }: ProjectCarouselProps) => {
   const thumbnailMaxWidth = `calc((100% / 8) - 20px)`
 
   return (
-    <section id="projects" className="w-full overflow-hidden" style={{ background: '#F4F4F4', padding: '30px 0' }}>
+    <section id="projects" className="w-full overflow-hidden" style={{ background: '#FFFFFF', padding: '120px 0' }}>
       <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] md:gap-16 lg:gap-24 max-w-7xl mx-auto px-5 relative items-start">
         
         {/* Kolom Kiri (Judul - Fit Content) */}
@@ -98,7 +98,19 @@ export const ProjectCarousel = ({ projectList }: ProjectCarouselProps) => {
                      <img 
                        src={activeProject.imageUrl} 
                        alt={activeProject.title}
-                       style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', display: 'block', flex: '1 1 auto', objectFit: 'cover' }}
+                       style={{ 
+                         position: 'absolute', 
+                         top: 0, 
+                         left: 0, 
+                         right: 0, 
+                         bottom: 0, 
+                         width: '100%', 
+                         height: '100%', 
+                         display: 'block', 
+                         flex: '1 1 auto', 
+                         objectFit: 'cover',
+                         boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)'
+                       }}
                      />
                   </div>
                   <figcaption style={{ alignSelf: 'flex-end', padding: '24px 20px 0 20px', flex: '0 0 auto', width: '25%', minWidth: '150px' }}>
@@ -112,18 +124,19 @@ export const ProjectCarousel = ({ projectList }: ProjectCarouselProps) => {
                     {/* Tech Stack Badges */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px' }}>
                       {activeProject.techStack.map((tech) => (
-                        <span 
-                          key={tech}
-                          style={{
-                            backgroundColor: '#FFFFFF',
-                            color: '#4B5563',
-                            padding: '2px 10px',
-                            borderRadius: '9999px',
-                            fontSize: '10px',
-                            fontWeight: 500,
-                            border: '1px solid #E5E7EB'
-                          }}
-                        >
+                         <span 
+                           key={tech}
+                           style={{
+                             backgroundColor: 'rgba(238, 242, 255, 0.5)',
+                             color: '#475569',
+                             padding: '4px 12px',
+                             borderRadius: '9999px',
+                             fontSize: '10px',
+                             fontWeight: 600,
+                             border: '1px solid rgba(224, 231, 255, 0.8)',
+                             letterSpacing: '0.02em'
+                           }}
+                         >
                           {tech}
                         </span>
                       ))}
@@ -172,10 +185,22 @@ export const ProjectCarousel = ({ projectList }: ProjectCarouselProps) => {
                     style={{ display: 'block', width: '100%', position: 'relative', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
                   >
                     <div style={{ display: 'block', content: '""', width: '100%', paddingTop: '100%' }} />
-                    <img 
-                      src={project.imageUrl} 
-                      alt=""
-                      style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', display: 'block', objectFit: 'cover', boxShadow: activeBoxShadow, transition: 'all 300ms ease-in-out' }}
+                     <img 
+                       src={project.imageUrl} 
+                       alt=""
+                       style={{ 
+                         position: 'absolute', 
+                         top: 0, 
+                         left: 0, 
+                         right: 0, 
+                         bottom: 0, 
+                         width: '100%', 
+                         height: '100%', 
+                         display: 'block', 
+                         objectFit: 'cover', 
+                         boxShadow: isActive ? '0 0 0 4px rgba(99, 102, 241, 0.4)' : '0 4px 12px rgba(0,0,0,0.05)', 
+                         transition: 'all 300ms ease-in-out' 
+                       }}
                       onMouseEnter={(e) => { e.currentTarget.style.boxShadow = hoverShadow }}
                       onMouseLeave={(e) => { e.currentTarget.style.boxShadow = activeBoxShadow }}
                     />

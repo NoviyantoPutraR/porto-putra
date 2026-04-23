@@ -1,6 +1,7 @@
 import Navbar from '@/components/features/navbar/Navbar'
 import HeroSection from '@/components/features/hero/HeroSection'
 import { ProjectCarousel, type ProjectDetail } from '@/components/features/projects/ProjectCarousel'
+import { AboutMe } from '@/components/AboutMe'
 
 const DAFTAR_PROYEK: ProjectDetail[] = [
   {
@@ -73,6 +74,7 @@ function App() {
     <main style={{ minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
       <Navbar />
       <HeroSection />
+      <AboutMe />
       <ProjectCarousel projectList={DAFTAR_PROYEK} />
     </main>
   )

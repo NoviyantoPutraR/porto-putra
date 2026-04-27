@@ -11,11 +11,11 @@ const NAV_LINKS = [
 ]
 
 /**
- * Navbar — responsive with mobile full-screen overlay.
+ * Navbar — premium system with Ripple Expansion effect.
  */
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Track scroll for frosted glass effect
   useEffect(() => {
@@ -24,14 +24,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
     }
-  }, [isMobileMenuOpen])
+  }, [isMenuOpen])
 
   return (
     <>
@@ -41,152 +41,112 @@ const Navbar = () => {
           top: 0,
           left: 0,
           right: 0,
-          zIndex: 50,
-          padding: '0.875rem 2rem',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.85)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(12px)' : 'none',
-          borderBottom: isScrolled
-            ? '1px solid rgba(0, 0, 0, 0.06)'
-            : '1px solid transparent',
+          zIndex: 100,
+          padding: '1.25rem 2rem',
+          transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
+          backgroundColor: isMenuOpen ? 'transparent' : (isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent'),
+          backdropFilter: isMenuOpen ? 'none' : (isScrolled ? 'blur(10px)' : 'none'),
+          WebkitBackdropFilter: isMenuOpen ? 'none' : (isScrolled ? 'blur(10px)' : 'none'),
+          borderBottom: isMenuOpen ? 'none' : (isScrolled ? '1px solid rgba(0, 0, 0, 0.05)' : '1px solid transparent'),
         }}
-        className="navbar-header"
       >
-        <div className="navbar-container">
-          {/* Left — Logo */}
+        <div className="navbar-content">
+          {/* Logo */}
           <a
             href="#home"
             style={{
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              color: '#0a0a0a',
+              fontWeight: 800,
+              fontSize: '1.25rem',
+              color: isMenuOpen ? '#ffffff' : '#0a0a0a',
               textDecoration: 'none',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.03em',
+              zIndex: 110,
+              transition: 'color 0.4s ease',
             }}
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => setIsMenuOpen(false)}
           >
             PutraRamadhan.
           </a>
 
-          {/* Center — Desktop Navigation */}
-          <nav className="desktop-nav">
-            <ul
-              style={{
-                display: 'flex',
-                gap: '2rem',
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    style={{
-                      fontWeight: 500,
-                      fontSize: '0.875rem',
-                      color: '#0a0a0a',
-                      textDecoration: 'none',
-                      letterSpacing: '0.01em',
-                      transition: 'color 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#6b7280'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '#0a0a0a'
-                    }}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Right — Desktop CTA */}
-          <div className="desktop-cta">
-            <a
-              href="#contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                padding: '0.5rem 1.125rem',
-                borderRadius: '9999px',
-                backgroundColor: '#0a0a0a',
-                color: '#ffffff',
-                fontWeight: 500,
-                fontSize: '0.8125rem',
-                textDecoration: 'none',
-                transition: 'background-color 0.2s ease, transform 0.2s ease',
-                letterSpacing: '0.01em',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#1a1a1a'
-                e.currentTarget.style.transform = 'translateY(-1px)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#0a0a0a'
-                e.currentTarget.style.transform = 'translateY(0)'
-              }}
-            >
-              Get in Touch
-            </a>
-          </div>
-
-          {/* Mobile — Hamburger Button */}
+          {/* Trigger Hamburger */}
           <button
-            className="mobile-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             style={{
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
-              color: '#0a0a0a',
-              display: 'none', // Hidden by default (desktop)
+              color: isMenuOpen ? '#ffffff' : '#0a0a0a',
               padding: '0.5rem',
-              zIndex: 60, // Ensure it stays above the overlay
-              position: isMobileMenuOpen ? 'relative' : 'static',
+              zIndex: 110,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'color 0.4s ease, transform 0.3s ease',
             }}
+            className="hover:scale-110 active:scale-95"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={32} strokeWidth={1.5} /> : <Menu size={32} strokeWidth={1.5} />}
           </button>
         </div>
       </header>
 
-      {/* Full-screen Mobile Overlay Menu */}
+      {/* Ripple Animation Overlay */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 25, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [1, 0, 0, 1], // Custom slow to fast easing
+            }}
+            style={{
+              position: 'fixed',
+              top: '40px', // Matches trigger position roughly
+              right: '40px',
+              width: '100px',
+              height: '100px',
+              borderRadius: '50%',
+              backgroundColor: '#0a0a0a', // Premium dark ripple
+              zIndex: 90,
+              transformOrigin: 'center center',
+              pointerEvents: 'none',
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Full-screen Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             style={{
               position: 'fixed',
               top: 0,
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: '#ffffff',
-              zIndex: 40,
+              zIndex: 95,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              padding: '2rem',
+              backgroundColor: 'transparent',
+              paddingTop: '60px', // Dikurangi sedikit agar lebih luas
             }}
           >
-            <nav>
+            <nav style={{ maxHeight: '80vh', display: 'flex', alignItems: 'center' }}>
               <ul
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '2rem',
+                  gap: '0.75rem', // Lebih rapat
                   listStyle: 'none',
                   margin: 0,
                   padding: 0,
@@ -196,20 +156,19 @@ const Navbar = () => {
                 {NAV_LINKS.map((link, index) => (
                   <motion.li
                     key={link.href}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + index * 0.05 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{
+                      delay: 0.5 + index * 0.08,
+                      duration: 0.6,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
                   >
                     <a
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      style={{
-                        fontWeight: 600,
-                        fontSize: '2rem',
-                        color: '#0a0a0a',
-                        textDecoration: 'none',
-                        letterSpacing: '-0.02em',
-                      }}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="nav-link-item"
                     >
                       {link.label}
                     </a>
@@ -217,61 +176,56 @@ const Navbar = () => {
                 ))}
               </ul>
             </nav>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              style={{ marginTop: '4rem' }}
-            >
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                style={{
-                  display: 'inline-block',
-                  padding: '1rem 2.5rem',
-                  borderRadius: '9999px',
-                  backgroundColor: '#0a0a0a',
-                  color: '#ffffff',
-                  fontWeight: 500,
-                  fontSize: '1rem',
-                  textDecoration: 'none',
-                }}
-              >
-                Get in Touch
-              </a>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <style>{`
-        .navbar-container {
-          display: grid;
-          grid-template-columns: 1fr auto 1fr;
+        .navbar-content {
+          max-width: 1440px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
           align-items: center;
         }
-        
-        .desktop-nav {
-          justify-self: center;
+
+        .nav-link-item {
+          font-family: 'Playfair Display', serif;
+          font-weight: 400;
+          font-size: clamp(1.5rem, 5vw, 2.75rem); /* Diperkecil lagi dari 3.5rem */
+          color: #ffffff;
+          text-decoration: none;
+          letter-spacing: 0.02em;
+          transition: all 0.3s ease;
+          position: relative;
+          padding: 0.2rem 1rem;
+          display: block;
         }
 
-        .desktop-cta {
-          justify-self: end;
+        .nav-link-item:hover {
+          color: #9ca3af;
+          transform: translateY(-5px);
+        }
+
+        .nav-link-item::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #ffffff;
+          transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+          transform: translateX(-50%);
+        }
+
+        .nav-link-item:hover::after {
+          width: 60%;
         }
 
         @media (max-width: 768px) {
-          .navbar-header {
+          header {
             padding: 1rem 1.5rem !important;
-          }
-          .navbar-container {
-            display: flex;
-            justify-content: space-between;
-          }
-          .desktop-nav, .desktop-cta {
-            display: none !important;
-          }
-          .mobile-toggle {
-            display: flex !important;
           }
         }
       `}</style>

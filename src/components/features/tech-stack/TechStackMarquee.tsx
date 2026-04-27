@@ -26,7 +26,7 @@ function TechStackMarqueeComponent() {
 
   return (
     <section className="bg-white py-12 overflow-hidden">
-      <div className="container mx-auto px-6 mb-8 text-center">
+      <div className="container mx-auto px-6 mb-2 text-center">
         <motion.h2 
           className="text-xs font-bold uppercase tracking-[0.3em] text-black mb-2"
           initial={{ opacity: 0, y: 10 }}
@@ -37,7 +37,7 @@ function TechStackMarqueeComponent() {
           Tech Stack
         </motion.h2>
         <motion.div 
-          className="h-[1px] bg-gray-300 mx-auto mt-4"
+          className="h-[1px] bg-gray-300 mx-auto mt-2"
           initial={{ width: 0 }}
           whileInView={{ width: 48 }}
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ function TechStackMarqueeComponent() {
 
       <div className="container mx-auto max-w-5xl">
         <div 
-          className="relative overflow-hidden group py-12"
+          className="relative overflow-hidden group py-4"
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',

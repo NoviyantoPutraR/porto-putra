@@ -57,7 +57,7 @@ function TechStackMarqueeComponent() {
             className="flex whitespace-nowrap"
             animate={{ x: [0, '-50%'] }}
             transition={{
-              duration: 30,
+              duration: 20,
               repeat: Infinity,
               ease: 'linear',
             }}

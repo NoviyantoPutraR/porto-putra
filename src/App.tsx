@@ -3,6 +3,7 @@ import HeroSection from '@/components/features/hero/HeroSection'
 import { ProjectCarousel, type ProjectDetail } from '@/components/features/projects/ProjectCarousel'
 import { AboutMe } from '@/components/AboutMe'
 import { TechStackMarquee } from '@/components/features/tech-stack/TechStackMarquee'
+import { GetInTouch } from '@/components/features/contact/GetInTouch'
 
 const DAFTAR_PROYEK: ProjectDetail[] = [
   {
@@ -78,6 +79,7 @@ function App() {
       <AboutMe />
       <ProjectCarousel projectList={DAFTAR_PROYEK} />
       <TechStackMarquee />
+      <GetInTouch />
     </main>
   )
 }

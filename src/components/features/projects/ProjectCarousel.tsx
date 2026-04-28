@@ -60,7 +60,7 @@ export const ProjectCarousel = ({ projectList }: ProjectCarouselProps) => {
                   whiteSpace: 'nowrap'
                 }}
               >
-                My Works.
+                My Projects.
               </h2>
             </motion.div>
           </div>

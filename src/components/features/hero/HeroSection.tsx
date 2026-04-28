@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import { motion, type Variants } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import PhotoCard from '@/components/features/hero/PhotoCard'
+import { GetStartedButton } from '@/components/ui/get-started-button'
 
 // [rendering-hoist-jsx] — static content and animation variants hoisted outside component
 const HERO_CONTENT = {
@@ -64,6 +66,7 @@ const BADGE_DOT_STYLE: React.CSSProperties = {
 }
 
 const BADGE_TEXT_STYLE: React.CSSProperties = {
+  fontFamily: "'Roboto', sans-serif",
   fontWeight: 500,
   fontSize: '0.75rem',
   letterSpacing: '0.08em',
@@ -72,6 +75,7 @@ const BADGE_TEXT_STYLE: React.CSSProperties = {
 }
 
 const H1_STYLE: React.CSSProperties = {
+  fontFamily: "'Roboto', sans-serif",
   fontWeight: 700,
   lineHeight: 1.1,
   letterSpacing: '-0.02em',
@@ -79,6 +83,7 @@ const H1_STYLE: React.CSSProperties = {
 }
 
 const DESC_BOLD_STYLE: React.CSSProperties = {
+  fontFamily: "'Roboto', sans-serif",
   fontWeight: 600,
   fontSize: '1.125rem',
   lineHeight: 1.55,
@@ -87,6 +92,7 @@ const DESC_BOLD_STYLE: React.CSSProperties = {
 }
 
 const DESC_MUTED_STYLE: React.CSSProperties = {
+  fontFamily: "'Roboto', sans-serif",
   fontWeight: 400,
   fontSize: '0.9375rem',
   lineHeight: 1.65,
@@ -101,36 +107,19 @@ const CTA_ROW_STYLE: React.CSSProperties = {
   flexWrap: 'wrap' as const,
 }
 
-const PRIMARY_BTN_BASE: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '0.75rem 1.75rem',
-  borderRadius: '9999px',
-  backgroundColor: '#0a0a0a',
-  color: '#ffffff',
-  fontWeight: 500,
-  fontSize: '0.875rem',
-  textDecoration: 'none',
-  border: '1.5px solid #0a0a0a',
-  cursor: 'pointer',
-  transition: 'background-color 0.2s ease, transform 0.2s ease',
-}
-
 const SECONDARY_BTN_BASE: React.CSSProperties = {
+  fontFamily: "'Roboto', sans-serif",
   display: 'inline-flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  padding: '0.75rem 1.75rem',
-  borderRadius: '9999px',
+  padding: '0.5rem 0',
   backgroundColor: 'transparent',
   color: '#0a0a0a',
   fontWeight: 500,
   fontSize: '0.875rem',
   textDecoration: 'none',
-  border: '1.5px solid #0a0a0a',
   cursor: 'pointer',
-  transition: 'background-color 0.2s ease, color 0.2s ease, transform 0.2s ease',
+  transition: 'all 0.2s ease',
+  gap: '0.5rem',
 }
 
 /**
@@ -191,37 +180,32 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div variants={itemVariants} style={CTA_ROW_STYLE}>
-            <a
-              href="#projects"
-              style={PRIMARY_BTN_BASE}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#1a1a1a'
-                e.currentTarget.style.transform = 'translateY(-1px)'
+            <GetStartedButton 
+              label={HERO_CONTENT.primaryCta} 
+              onClick={() => {
+                const el = document.getElementById('projects')
+                if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#0a0a0a'
-                e.currentTarget.style.transform = 'translateY(0)'
-              }}
-            >
-              {HERO_CONTENT.primaryCta}
-            </a>
+            />
 
-            <a
+            <motion.a
               href="#contact"
               style={SECONDARY_BTN_BASE}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#0a0a0a'
-                e.currentTarget.style.color = '#ffffff'
-                e.currentTarget.style.transform = 'translateY(-1px)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = '#0a0a0a'
-                e.currentTarget.style.transform = 'translateY(0)'
-              }}
+              initial="initial"
+              whileHover="hover"
             >
               {HERO_CONTENT.secondaryCta}
-            </a>
+              <motion.span
+                variants={{
+                  initial: { x: 0 },
+                  hover: { x: 5 }
+                }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <ArrowRight size={18} strokeWidth={2.5} />
+              </motion.span>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import { motion, type Variants } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import PhotoCard from '@/components/features/hero/PhotoCard'
 import { GetStartedButton } from '@/components/ui/get-started-button'
 
@@ -13,7 +12,6 @@ const HERO_CONTENT = {
   descMuted:
     'Experienced in building clean, responsive full-stack architectures. Combining code precision with the power of AI to create more intuitive digital experiences.',
   primaryCta: 'View My Projects',
-  secondaryCta: 'Contact Me',
 } as const
 
 const containerVariants: Variants = {
@@ -107,20 +105,7 @@ const CTA_ROW_STYLE: React.CSSProperties = {
   flexWrap: 'wrap' as const,
 }
 
-const SECONDARY_BTN_BASE: React.CSSProperties = {
-  fontFamily: "'Roboto', sans-serif",
-  display: 'inline-flex',
-  alignItems: 'center',
-  padding: '0.5rem 0',
-  backgroundColor: 'transparent',
-  color: '#0a0a0a',
-  fontWeight: 500,
-  fontSize: '0.875rem',
-  textDecoration: 'none',
-  cursor: 'pointer',
-  transition: 'all 0.2s ease',
-  gap: '0.5rem',
-}
+
 
 /**
  * HeroSection — Classic Split layout (Option A from design spec).
@@ -187,25 +172,6 @@ const HeroSection = () => {
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
             />
-
-            <motion.a
-              href="#contact"
-              style={SECONDARY_BTN_BASE}
-              initial="initial"
-              whileHover="hover"
-            >
-              {HERO_CONTENT.secondaryCta}
-              <motion.span
-                variants={{
-                  initial: { x: 0 },
-                  hover: { x: 5 }
-                }}
-                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                style={{ display: 'flex', alignItems: 'center' }}
-              >
-                <ArrowRight size={18} strokeWidth={2.5} />
-              </motion.span>
-            </motion.a>
           </motion.div>
         </motion.div>
       </div>

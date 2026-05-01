@@ -4,6 +4,7 @@ import { ProjectCarousel, type ProjectDetail } from '@/components/features/proje
 import { AboutMe } from '@/components/AboutMe'
 import { TechStackMarquee } from '@/components/features/tech-stack/TechStackMarquee'
 import { GetInTouch } from '@/components/features/contact/GetInTouch'
+import { Footer } from '@/components/features/footer/Footer'
 
 const DAFTAR_PROYEK: ProjectDetail[] = [
   {
@@ -80,6 +81,7 @@ function App() {
       <ProjectCarousel projectList={DAFTAR_PROYEK} />
       <TechStackMarquee />
       <GetInTouch />
+      <Footer />
     </main>
   )
 }

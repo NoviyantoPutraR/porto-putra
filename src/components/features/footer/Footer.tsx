@@ -71,7 +71,7 @@ export const Footer = () => {
               PutraRamadhan.
             </a>
             <p className="text-xs text-[var(--text)] opacity-60">
-              &copy; {new Date().getFullYear()} PutraRamadhan. Semua hak dilindungi.
+              PutraRamadhan &copy; {new Date().getFullYear()}. Handcrafted with Precision.
             </p>
           </div>
         </motion.div>

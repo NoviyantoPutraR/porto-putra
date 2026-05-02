@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { motion, type Variants } from 'framer-motion'
 import PhotoCard from '@/components/features/hero/PhotoCard'
 import { GetStartedButton } from '@/components/ui/get-started-button'
+import { Typewriter } from '@/components/ui/typewriter'
 
 // [rendering-hoist-jsx] — static content and animation variants hoisted outside component
 const HERO_CONTENT = {
@@ -148,9 +149,21 @@ const HeroSection = () => {
               fontSize: 'clamp(3rem, 6vw, 5.5rem)',
             }}
           >
-            {HERO_CONTENT.headline1}
+            <span className="font-medium">{HERO_CONTENT.headline1}</span>
             <br />
-            {HERO_CONTENT.headline2}
+            <Typewriter
+              text={[
+                HERO_CONTENT.headline2,
+                "Web Developer",
+                "AI Enthusiast"
+              ]}
+              speed={70}
+              waitTime={2500}
+              deleteSpeed={40}
+              cursorChar={"_"}
+              className="text-[#0a0a0a] font-bold"
+              cursorClassName="text-[#0a0a0a] ml-1 font-bold"
+            />
           </motion.h1>
 
           {/* Bold Description */}

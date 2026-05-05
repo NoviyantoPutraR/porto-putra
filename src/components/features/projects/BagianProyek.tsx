@@ -88,7 +88,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
       </div>
 
       {/* Slider Container - Full Bleed memanjang layar penuh */}
-      <div className="w-full border-t border-b border-slate-200">
+      <div className="w-full border-t border-b border-slate-300">
         <motion.div
           ref={(el) => {
             // Memberikan referensi ke el tanpa menggunakan 'any'
@@ -121,7 +121,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
             <motion.div
               key={proyek.id}
               variants={varianAnak}
-              className="group relative flex-none w-[85vw] md:w-[45vw] lg:w-[31.5vw] snap-start border-l border-r border-slate-200 p-8 flex flex-col transition-colors duration-500 hover:bg-slate-50 -ml-[1px]"
+              className="group relative flex-none w-[85vw] md:w-[45vw] lg:w-[31.5vw] snap-start border-l border-r border-slate-300 p-8 flex flex-col transition-colors duration-500 hover:bg-slate-50 -ml-[1px]"
             >
               {/* Nomor */}
               <div className="text-xl md:text-2xl font-light text-slate-400 mb-6 transition-colors duration-500 group-hover:text-slate-900 pointer-events-none">
@@ -154,7 +154,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
                     {proyek.techStack.map((teknologi) => (
                       <span
                         key={teknologi}
-                        className="px-3 py-1 text-[10px] uppercase tracking-widest font-semibold text-slate-500 bg-slate-100 rounded-none border border-slate-200 transition-colors duration-300 group-hover:bg-white group-hover:border-slate-300"
+                        className="px-3 py-1 text-[10px] uppercase tracking-widest font-semibold text-slate-500 bg-slate-100 rounded-none border border-slate-300 transition-colors duration-300 group-hover:bg-white group-hover:border-slate-400"
                       >
                         {teknologi}
                       </span>

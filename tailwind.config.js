@@ -15,6 +15,8 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       transitionTimingFunction: {
         premium: "cubic-bezier(0.4, 0, 0.2, 1)",

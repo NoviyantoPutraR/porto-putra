@@ -1,12 +1,12 @@
 import Navbar from '@/components/features/navbar/Navbar'
 import HeroSection from '@/components/features/hero/HeroSection'
-import { ProjectCarousel, type ProjectDetail } from '@/components/features/projects/ProjectCarousel'
+import { BagianProyek, type DetailProyek } from '@/components/features/projects/BagianProyek'
 import { AboutMe } from '@/components/AboutMe'
 import { TechStackMarquee } from '@/components/features/tech-stack/TechStackMarquee'
 import { GetInTouch } from '@/components/features/contact/GetInTouch'
 import { Footer } from '@/components/features/footer/Footer'
 
-const DAFTAR_PROYEK: ProjectDetail[] = [
+const DAFTAR_PROYEK: DetailProyek[] = [
   {
     id: 1,
     title: 'Kerjabaik.ai — HR Platform',
@@ -78,7 +78,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <AboutMe />
-      <ProjectCarousel projectList={DAFTAR_PROYEK} />
+      <BagianProyek daftarProyek={DAFTAR_PROYEK} />
       <TechStackMarquee />
       <GetInTouch />
       <Footer />

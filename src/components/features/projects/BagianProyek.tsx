@@ -1,5 +1,6 @@
 import { motion, useInView, Variants } from 'framer-motion'
 import { useRef } from 'react'
+import { Typewriter } from '@/components/ui/typewriter'
 
 export interface DetailProyek {
   id: number
@@ -80,9 +81,18 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
       
       {/* Header Container untuk menjaga alignment max-width */}
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex justify-end mb-16">
+        <div className="flex justify-end mb-16 min-h-[1.2em]">
           <h2 className="text-5xl md:text-7xl font-playfair italic font-medium tracking-wide">
-            PROJECTS
+            {dalamTampilan ? (
+              <Typewriter 
+                text="PROJECTS" 
+                loop={false} 
+                speed={150} 
+                cursorClassName="text-slate-400 font-light" 
+              />
+            ) : (
+              <span className="opacity-0">PROJECTS</span>
+            )}
           </h2>
         </div>
       </div>

@@ -120,12 +120,17 @@ const HeroSection = () => {
     >
       <div style={GRID_STYLE} className="hero-grid">
         {/* Left — Photo */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <motion.div 
+          style={{ display: 'flex', justifyContent: 'center' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+        >
           <PhotoCard
             alt="Putra — Software Engineer"
             src="/Hero.png"
           />
-        </div>
+        </motion.div>
 
         {/* Right — Content */}
         <motion.div

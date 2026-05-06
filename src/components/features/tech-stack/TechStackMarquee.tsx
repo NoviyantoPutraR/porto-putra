@@ -28,7 +28,7 @@ function TechStackMarqueeComponent() {
     <section className="bg-white py-12 overflow-hidden">
       <div className="container mx-auto px-6 mb-2 text-center">
         <motion.h2 
-          className="text-xl md:text-2xl font-playfair italic font-medium tracking-wide text-black mb-2"
+          className="text-xl md:text-2xl font-sans font-bold tracking-wide text-black mb-2"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

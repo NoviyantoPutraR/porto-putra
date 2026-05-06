@@ -139,7 +139,7 @@ export function GetInTouch() {
         {/* Konten Teks dan Tombol */}
         <div className="relative z-20 flex flex-col items-center text-center">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-playfair italic font-medium tracking-wide text-gray-900 mb-8 max-w-3xl leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-wide text-gray-900 mb-8 max-w-3xl leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

@@ -65,7 +65,6 @@ const BADGE_DOT_STYLE: React.CSSProperties = {
 }
 
 const BADGE_TEXT_STYLE: React.CSSProperties = {
-  fontFamily: "'Roboto', sans-serif",
   fontWeight: 500,
   fontSize: '0.75rem',
   letterSpacing: '0.08em',
@@ -74,7 +73,6 @@ const BADGE_TEXT_STYLE: React.CSSProperties = {
 }
 
 const H1_STYLE: React.CSSProperties = {
-  fontFamily: "'Roboto', sans-serif",
   fontWeight: 700,
   lineHeight: 1.1,
   letterSpacing: '-0.02em',
@@ -82,7 +80,6 @@ const H1_STYLE: React.CSSProperties = {
 }
 
 const DESC_BOLD_STYLE: React.CSSProperties = {
-  fontFamily: "'Roboto', sans-serif",
   fontWeight: 600,
   fontSize: '1.125rem',
   lineHeight: 1.55,
@@ -91,7 +88,6 @@ const DESC_BOLD_STYLE: React.CSSProperties = {
 }
 
 const DESC_MUTED_STYLE: React.CSSProperties = {
-  fontFamily: "'Roboto', sans-serif",
   fontWeight: 400,
   fontSize: '0.9375rem',
   lineHeight: 1.65,

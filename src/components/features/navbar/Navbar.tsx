@@ -190,8 +190,8 @@ const Navbar = () => {
         }
 
         .nav-link-item {
-          font-family: 'Playfair Display', serif;
-          font-weight: 400;
+          font-family: var(--sans);
+          font-weight: 500;
           font-size: clamp(1.5rem, 5vw, 2.75rem); /* Diperkecil lagi dari 3.5rem */
           color: #ffffff;
           text-decoration: none;

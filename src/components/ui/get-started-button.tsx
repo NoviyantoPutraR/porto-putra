@@ -15,7 +15,6 @@ export function GetStartedButton({
   return (
     <Button 
       className="group relative overflow-hidden bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] rounded-full h-[44px] px-[24px] text-sm transition-all duration-300"
-      style={{ fontFamily: "'Roboto', sans-serif" }}
       size="lg"
       onClick={onClick}
     >

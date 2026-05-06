@@ -40,7 +40,7 @@ export const ProjectGrid = ({
       id="projects"
       className={cn('container relative my-20 py-10 mx-auto px-4 lg:px-8', className)}
     >
-      <h2 className="text-center text-4xl font-semibold capitalize !leading-[1.4] md:text-5xl lg:text-6xl mb-4 text-[#0a0a0a]">
+      <h2 className="text-center text-4xl font-sans font-bold capitalize !leading-[1.4] md:text-5xl lg:text-6xl mb-4 text-[#0a0a0a]">
         {title}
       </h2>
 

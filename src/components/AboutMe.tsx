@@ -14,7 +14,7 @@ function AboutMeComponent() {
         whileInView={{ opacity: 0.04, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
-        className="pointer-events-none absolute left-0 w-full text-center top-16 z-0 select-none whitespace-nowrap text-[80px] leading-none tracking-normal text-black md:top-10 md:text-[150px] lg:-top-6 lg:text-[220px] font-playfair italic font-medium"
+        className="pointer-events-none absolute left-0 w-full text-center top-16 z-0 select-none whitespace-nowrap text-[80px] leading-none tracking-normal text-black md:top-10 md:text-[150px] lg:-top-6 lg:text-[220px] font-accent italic font-medium"
       >
         ABOUT ME
       </motion.h2>

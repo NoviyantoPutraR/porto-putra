@@ -24,8 +24,8 @@ const varianWadah: Variants = {
   terlihat: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 }
@@ -36,8 +36,8 @@ const varianAnak: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeOut",
+      duration: 1.2,
+      ease: [0.33, 1, 0.68, 1],
     },
   },
 }
@@ -77,18 +77,18 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
   }
 
   return (
-    <section id="proyek" className="w-full relative bg-white py-24 mb-10 overflow-x-hidden font-roboto text-slate-900">
+    <section id="proyek" className="w-full relative bg-white py-24 mb-10 overflow-x-hidden font-sans text-slate-900">
       
       {/* Header Container untuk menjaga alignment max-width */}
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex justify-end mb-16 min-h-[1.2em]">
-          <h2 className="text-5xl md:text-7xl font-playfair italic font-medium tracking-wide">
+          <h2 className="text-5xl md:text-7xl font-sans font-bold italic tracking-wide">
             {dalamTampilan ? (
               <Typewriter 
                 text="PROJECTS" 
                 loop={false} 
                 speed={150} 
-                cursorClassName="text-slate-400 font-light" 
+                cursorClassName="text-slate-400 font-light inline-block transform -skew-x-[15deg]" 
               />
             ) : (
               <span className="opacity-0">PROJECTS</span>
@@ -143,7 +143,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
                 <img
                   src={proyek.imageUrl}
                   alt={proyek.title}
-                  className="w-full h-full object-cover origin-center transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover origin-center transition-transform duration-1200 ease-out group-hover:scale-[1.05]"
                   loading="lazy"
                   draggable={false} // Mencegah konflik browser image drag bawaan
                 />

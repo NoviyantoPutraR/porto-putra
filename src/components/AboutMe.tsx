@@ -6,7 +6,7 @@ import { memo } from 'react'
  */
 function AboutMeComponent() {
   return (
-    <section className="relative w-full overflow-hidden bg-white px-6 py-24 text-black md:px-12 lg:px-24 pt-32">
+    <section id="tentang-saya" className="relative w-full overflow-hidden bg-white px-6 py-24 text-black md:px-12 lg:px-24 pt-32">
 
       {/* Latar Belakang Judul Watermark Besar (Opsi 3) */}
       <motion.h2

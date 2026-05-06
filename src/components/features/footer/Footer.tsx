@@ -65,7 +65,7 @@ export const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <a
-              href="#home"
+              href="#beranda"
               className="text-sm font-bold text-[var(--text)] hover:opacity-70 transition-opacity no-underline"
             >
               PutraRamadhan.

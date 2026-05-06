@@ -111,7 +111,7 @@ const CTA_ROW_STYLE: React.CSSProperties = {
 const HeroSection = () => {
   return (
     <section
-      id="home"
+      id="beranda"
       style={SECTION_STYLE}
     >
       <div style={GRID_STYLE} className="hero-grid">
@@ -182,7 +182,7 @@ const HeroSection = () => {
             <GetStartedButton 
               label={HERO_CONTENT.primaryCta} 
               onClick={() => {
-                const el = document.getElementById('projects')
+                const el = document.getElementById('proyek')
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
             />

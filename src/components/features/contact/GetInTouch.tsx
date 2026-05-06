@@ -96,7 +96,7 @@ export function GetInTouch() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-32 lg:py-48 flex items-center justify-center min-h-[60vh]">
+    <section id="kontak" className="relative w-full overflow-hidden bg-white py-32 lg:py-48 flex items-center justify-center min-h-[60vh]">
       {/* Container utama untuk membatasi lebar maksimal konten */}
       <div className="relative w-full max-w-7xl px-4 md:px-8 mx-auto flex flex-col items-center justify-center z-10">
         

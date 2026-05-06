@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'My Projects', href: '#projects' },
-  { label: 'About Me', href: '#about' },
-  { label: 'Tech Stack', href: '#tech-stack' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#beranda' },
+  { label: 'Projects', href: '#proyek' },
+  { label: 'About Me', href: '#tentang-saya' },
+  { label: 'Tech Stack', href: '#keahlian' },
+  { label: 'Contact', href: '#kontak' },
 ]
 
 /**
@@ -53,7 +53,7 @@ const Navbar = () => {
         <div className="navbar-content">
           {/* Logo */}
           <a
-            href="#home"
+            href="#beranda"
             style={{
               fontWeight: 800,
               fontSize: '1.25rem',

@@ -25,7 +25,7 @@ function TechStackMarqueeComponent() {
   const listItems = [...TECH_ITEMS, ...TECH_ITEMS]
 
   return (
-    <section id="keahlian" className="bg-white py-12 overflow-hidden">
+    <section id="keahlian" className="bg-white py-12 overflow-hidden scroll-mt-24">
       <div className="container mx-auto px-6 mb-2 text-center">
         <motion.h2 
           className="text-xl md:text-2xl font-sans font-bold tracking-wide text-black mb-2"

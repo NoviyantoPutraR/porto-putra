@@ -96,7 +96,7 @@ export function GetInTouch() {
   }
 
   return (
-    <section id="kontak" className="relative w-full overflow-hidden bg-white py-32 lg:py-48 flex items-center justify-center min-h-[60vh]">
+    <section id="kontak" className="relative w-full overflow-hidden bg-white py-20 md:py-32 lg:py-48 flex items-center justify-center min-h-[60vh] scroll-mt-24">
       {/* Container utama untuk membatasi lebar maksimal konten */}
       <div className="relative w-full max-w-7xl px-4 md:px-8 mx-auto flex flex-col items-center justify-center z-10">
         
@@ -139,7 +139,7 @@ export function GetInTouch() {
         {/* Konten Teks dan Tombol */}
         <div className="relative z-20 flex flex-col items-center text-center">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-wide text-gray-900 mb-8 max-w-3xl leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold tracking-wide text-gray-900 mb-8 max-w-3xl leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -162,7 +162,7 @@ export function GetInTouch() {
                 onClick={kontak.nama === 'Email' ? tanganiSalinEmail : undefined}
                 aria-label={`Hubungi via ${kontak.nama}`}
                 variants={variasiIkon}
-                className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-white shadow-md shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-200 group transition-all duration-300 cursor-pointer"
+                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-white shadow-md shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-200 group transition-all duration-300 cursor-pointer"
               >
                 {/* Feedback Badge "Tersalin!" */}
                 <AnimatePresence>

@@ -77,7 +77,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
   }
 
   return (
-    <section id="proyek" className="w-full relative bg-white py-24 mb-10 overflow-x-hidden font-sans text-slate-900">
+    <section id="proyek" className="w-full relative bg-white py-24 mb-10 overflow-x-hidden font-sans text-slate-900 scroll-mt-24">
       
       {/* Header Container untuk menjaga alignment max-width */}
       <div className="max-w-7xl mx-auto px-4 md:px-8">

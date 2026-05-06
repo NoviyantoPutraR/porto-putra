@@ -112,6 +112,7 @@ const HeroSection = () => {
   return (
     <section
       id="beranda"
+      className="scroll-mt-24"
       style={SECTION_STYLE}
     >
       <div style={GRID_STYLE} className="hero-grid">

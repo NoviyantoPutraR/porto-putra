@@ -142,7 +142,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
 
               {/* Wadah Gambar */}
               <div 
-                className="w-full aspect-[4/3] overflow-hidden mb-8 bg-slate-100 flex-shrink-0 relative cursor-pointer group/img"
+                className="w-full aspect-[4/3] overflow-hidden mb-8 bg-slate-100 flex-shrink-0 relative cursor-zoom-in group/img"
                 onClick={() => setGambarTerpilih(proyek.imageUrl)}
               >
                 <img

@@ -1,6 +1,7 @@
 import { motion, useInView, Variants } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Typewriter } from '@/components/ui/typewriter'
+import { Lightbox } from '@/components/ui/Lightbox'
 
 export interface DetailProyek {
   id: number
@@ -46,6 +47,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
   const referensi = useRef<HTMLDivElement>(null)
   const dalamTampilan = useInView(referensi, { once: true, margin: '-10% 0px' })
   const wadahScrollRef = useRef<HTMLDivElement>(null)
+  const [gambarTerpilih, setGambarTerpilih] = useState<string | null>(null)
 
   // Status untuk fitur drag-to-scroll menggunakan mouse
   const isDragging = useRef(false)
@@ -139,11 +141,14 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
               </div>
 
               {/* Wadah Gambar */}
-              <div className="w-full aspect-[4/3] overflow-hidden mb-8 bg-slate-100 flex-shrink-0 relative pointer-events-none">
+              <div 
+                className="w-full aspect-[4/3] overflow-hidden mb-8 bg-slate-100 flex-shrink-0 relative cursor-pointer group/img"
+                onClick={() => setGambarTerpilih(proyek.imageUrl)}
+              >
                 <img
                   src={proyek.imageUrl}
                   alt={proyek.title}
-                  className="w-full h-full object-cover origin-center transition-transform duration-1200 ease-out group-hover:scale-[1.05]"
+                  className="w-full h-full object-cover origin-center transition-transform duration-1200 ease-out"
                   loading="lazy"
                   draggable={false} // Mencegah konflik browser image drag bawaan
                 />
@@ -179,6 +184,12 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
           <div className="flex-none w-4 md:w-8 lg:w-[calc(50vw-40rem+2rem)] shrink-0 pointer-events-none" />
         </motion.div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Lightbox 
+        imageUrl={gambarTerpilih} 
+        onClose={() => setGambarTerpilih(null)} 
+      />
     </section>
   )
 }

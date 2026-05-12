@@ -9,14 +9,13 @@ import { Footer } from '@/components/features/footer/Footer'
 const DAFTAR_PROYEK: DetailProyek[] = [
   {
     id: 1,
-    title: 'Kerjabaik.ai — HR Platform',
+    title: 'RestoPay - Point of Sale',
     description:
-      'A modern web-based talent and HR management system with AI integration for performance tracking.',
+      'QR-based restaurant ordering system with integrated Xendit payment gateway for seamless and automated transactions.',
     longDescription:
-      'Kerjabaik.ai is a next-generation human resource management platform that leverages artificial intelligence to automate recruitment processes, performance appraisals, and talent management. The platform is designed to help medium to large-scale organizations make more accurate and efficient data-driven decisions.',
-    techStack: ['React', 'Next.js', 'PostgreSQL', 'OpenAI', 'Supabase'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
+      'RestoPay is a modern web-based point-of-sale system that leverages artificial intelligence to automate recruitment processes, performance appraisals, and talent management. The platform is designed to help medium to large-scale organizations make more accurate and efficient data-driven decisions.',
+    techStack: ['laravel', 'Blade', 'MySQL', 'Xendit', 'Tailwind CSS'],
+    imageUrl: '/Gambar 1 .png',
     githubUrl: '#',
     liveUrl: '#',
     year: '2024',
@@ -24,14 +23,13 @@ const DAFTAR_PROYEK: DetailProyek[] = [
   },
   {
     id: 2,
-    title: 'Financial Analytics Dashboard',
+    title: 'SiCMS — AI-Powered Smart Digital Government Portal',
     description:
-      'A financial analytics dashboard interface with interactive charts and real-time data synchronization.',
+      'Intelligent content management system to accelerate transparent and accountable government information publication for citizens.',
     longDescription:
-      'A comprehensive financial data visualization solution that allows finance managers to monitor cash flow, income statements, and budget projections through an intuitive interface. Features smart notifications and automatic report exports (PDF/Excel).',
+      'SiCMS is a government-scale content management system designed to streamline the publication of official information. The platform integrates AI-powered content analysis, automated compliance checking, and multi-channel distribution to ensure transparency, accuracy, and accountability in public communication.',
     techStack: ['TypeScript', 'Tailwind CSS', 'Recharts', 'React Query', 'Prisma'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/gambar 2.png',
     githubUrl: '#',
     liveUrl: '#',
     year: '2024',
@@ -39,14 +37,13 @@ const DAFTAR_PROYEK: DetailProyek[] = [
   },
   {
     id: 3,
-    title: 'Multi-Platform Shopping App',
+    title: 'JalanBaik AI: Computer Vision Road Infrastructure Monitoring System',
     description:
-      'A mobile shopping application with centralized state management and offline-first optimization.',
+      'AI platform for automated road damage detection to ensure budget transparency and smart infrastructure maintenance.',
     longDescription:
-      'A cross-platform e-commerce application built with React Native, supporting a seamless shopping experience even with unstable internet connections. Key features include persistent shopping carts, integrated payment systems, and location-based push notifications.',
+      'A modern learning management system designed to support flexible and scalable education delivery. With multi-tenant architecture, the platform can be used by various institutions simultaneously while maintaining data isolation and security. Key features include AI-powered quiz generation, progress tracking, and integration with various learning tools.',
     techStack: ['React Native', 'Zustand', 'Supabase', 'Stripe', 'Expo'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/gambar 3.png',
     githubUrl: '#',
     liveUrl: '#',
     year: '2023',
@@ -54,14 +51,13 @@ const DAFTAR_PROYEK: DetailProyek[] = [
   },
   {
     id: 4,
-    title: 'Content Management System',
+    title: 'Modern LMS Platform',
     description:
-      'A modular CMS for organizations with multi-level content approval workflows and audit logs.',
+      'Cloud-based multi-tenant LMS featuring AI-powered automated quiz generation for diverse organizations and institutions.',
     longDescription:
       'A content management system built from the ground up to meet the needs of organizations with complex editorial structures. Supports multi-level workflows, content versioning, automated publication scheduling, and integration with various content distribution platforms.',
     techStack: ['Next.js', 'TypeScript', 'Supabase', 'Zod', 'Framer Motion'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop',
+    imageUrl: '/gambar 4.png',
     githubUrl: '#',
     liveUrl: '#',
     year: '2023',

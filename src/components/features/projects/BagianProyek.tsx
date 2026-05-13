@@ -133,7 +133,7 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
             <motion.div
               key={proyek.id}
               variants={varianAnak}
-              className="group relative flex-none w-[85vw] md:w-[45vw] lg:w-[31.5vw] snap-start border-l border-r border-slate-300 p-8 flex flex-col transition-colors duration-500 hover:bg-slate-50 -ml-[1px]"
+              className="group relative flex-none w-[85vw] md:w-[45vw] lg:w-[31.5vw] snap-start border-l border-r border-slate-300 p-8 flex flex-col transition-colors duration-500 hover:bg-slate-50 -ml-[1px] z-10"
             >
               {/* Nomor */}
               <div className="text-xl md:text-2xl font-light text-slate-400 mb-6 transition-colors duration-500 group-hover:text-slate-900 pointer-events-none">

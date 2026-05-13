@@ -5,6 +5,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { TechStackMarquee } from '@/components/features/tech-stack/TechStackMarquee'
 import { GetInTouch } from '@/components/features/contact/GetInTouch'
 import { Footer } from '@/components/features/footer/Footer'
+import { InfiniteGridBackground } from '@/components/ui/InfiniteGridBackground'
 
 const DAFTAR_PROYEK: DetailProyek[] = [
   {
@@ -28,7 +29,7 @@ const DAFTAR_PROYEK: DetailProyek[] = [
       'Intelligent content management system to accelerate transparent and accountable government information publication for citizens.',
     longDescription:
       'SiCMS is a government-scale content management system designed to streamline the publication of official information. The platform integrates AI-powered content analysis, automated compliance checking, and multi-channel distribution to ensure transparency, accuracy, and accountability in public communication.',
-    techStack: ['TypeScript', 'Tailwind CSS', 'Recharts', 'React Query', 'Prisma'],
+    techStack: ['React', 'Tailwind CSS', 'OpenRouter', 'React Query', 'Supabase'],
     imageUrl: '/gambar 2.png',
     githubUrl: '#',
     liveUrl: '#',
@@ -41,8 +42,8 @@ const DAFTAR_PROYEK: DetailProyek[] = [
     description:
       'AI platform for automated road damage detection to ensure budget transparency and smart infrastructure maintenance.',
     longDescription:
-      'A modern learning management system designed to support flexible and scalable education delivery. With multi-tenant architecture, the platform can be used by various institutions simultaneously while maintaining data isolation and security. Key features include AI-powered quiz generation, progress tracking, and integration with various learning tools.',
-    techStack: ['React Native', 'Zustand', 'Supabase', 'Stripe', 'Expo'],
+      'JalanBaik AI is a computer vision-based platform designed to detect and classify road damage automatically. The system utilizes deep learning models to analyze images captured by drones or vehicles, identifying issues such as cracks, potholes, and surface degradation. This solution supports government agencies in monitoring infrastructure quality, optimizing maintenance budgets, and ensuring transparent allocation of public funds.',
+    techStack: ['Next.js', 'FastAPI', 'Supabase', 'Redis', 'MapLibre', 'Tailwind CSS'],
     imageUrl: '/gambar 3.png',
     githubUrl: '#',
     liveUrl: '#',
@@ -56,7 +57,7 @@ const DAFTAR_PROYEK: DetailProyek[] = [
       'Cloud-based multi-tenant LMS featuring AI-powered automated quiz generation for diverse organizations and institutions.',
     longDescription:
       'A content management system built from the ground up to meet the needs of organizations with complex editorial structures. Supports multi-level workflows, content versioning, automated publication scheduling, and integration with various content distribution platforms.',
-    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Zod', 'Framer Motion'],
+    techStack: ['React', 'Tailwind CSS', 'Supabase', 'OpenRouter', 'TanStack Query'],
     imageUrl: '/gambar 4.png',
     githubUrl: '#',
     liveUrl: '#',
@@ -71,6 +72,7 @@ const DAFTAR_PROYEK: DetailProyek[] = [
 function App() {
   return (
     <main style={{ minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
+      <InfiniteGridBackground heroSectionId="beranda" />
       <Navbar />
       <HeroSection />
       <AboutMe />

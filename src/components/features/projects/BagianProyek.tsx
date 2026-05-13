@@ -156,23 +156,25 @@ export function BagianProyek({ daftarProyek }: BagianProyekProps) {
 
               {/* Konten */}
               <div className="flex-grow flex flex-col pointer-events-none">
-                <h3 className="text-lg font-bold uppercase tracking-tight mb-4 text-slate-900">
+                <h3 className="text-2xl font-medium tracking-tight mb-4 text-slate-900">
                   {proyek.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600 mb-8 line-clamp-3">
+                <p className="text-sm leading-relaxed text-slate-700 mb-8 line-clamp-3">
                   {proyek.description}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="mt-auto pt-4 pointer-events-auto">
-                  <div className="flex flex-wrap gap-2">
-                    {proyek.techStack.map((teknologi) => (
-                      <span
-                        key={teknologi}
-                        className="px-3 py-1 text-[10px] uppercase tracking-widest font-semibold text-slate-500 bg-slate-100 rounded-none border border-slate-300 transition-colors duration-300 group-hover:bg-white group-hover:border-slate-400"
-                      >
-                        {teknologi}
-                      </span>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] uppercase tracking-wider font-medium text-slate-500">
+                    {proyek.techStack.map((teknologi, idx) => (
+                      <div key={teknologi} className="flex items-center gap-3">
+                        <span className="transition-colors duration-300 group-hover:text-slate-900">
+                          {teknologi}
+                        </span>
+                        {idx < proyek.techStack.length - 1 && (
+                          <span className="w-1 h-1 rounded-full bg-slate-300 group-hover:bg-slate-400 transition-colors duration-300" />
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
